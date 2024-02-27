@@ -1,0 +1,10 @@
+# 修改 Git 默认编辑器
+git config --global core.editor vim 
+# 设置合并时禁用 fast forward，相当于使用 --no-ff 选项
+git config --global merge.ff false
+# 配置别名 co，以后可以使用 git co 代替 git commit 命令
+git config --global alias.co "commit"
+# 配置别名 lg，以合适的方式显示分支图
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+# 作用同上，但是是另一种显示风格，两命令执行一个便可，主要区别在于前者额外显示时间和作者
+git config --global alias.lg "log --pretty=oneline --all --graph --abbrev-commit"
